@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_travel/const.dart';
 import 'package:project_travel/models/destination_model.dart';
+import 'package:project_travel/widgets/popular_destination.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -59,8 +60,13 @@ class _HomePageState extends State<HomePage> {
               children: List.generate(
                 popular.length,
                 (index) => Padding(
-                  padding: EdgeInsets.only(bottom: 10),
-                  child: GestureDetector(),
+                  padding: EdgeInsets.only(right: 10),
+                  child: GestureDetector(
+                    onTap: () {
+                      
+                    },
+                    child: PopularDestination(destination: popular[index]),
+                  ),
                 ),
               ),
             ),
